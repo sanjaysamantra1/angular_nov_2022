@@ -10,6 +10,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { OrdinalPipe } from './custom-pipes/ordinal.pipe';
+import { ProductsComponent } from './components/products/products.component';
+import { LoginModule } from 'src/login/login.module';
+import { DatabindingComponent } from './components/databinding/databinding.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   // components,pipes,directives
@@ -22,9 +26,11 @@ import { OrdinalPipe } from './custom-pipes/ordinal.pipe';
     CarouselComponent,
     CardsComponent,
     OrdinalPipe,
+    ProductsComponent,
+    DatabindingComponent,
   ],
   // dependent modules
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, LoginModule, FormsModule],
   // Injectables (Services)
   providers: [],
   // which comp to load

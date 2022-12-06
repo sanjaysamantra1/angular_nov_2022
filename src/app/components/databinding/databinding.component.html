@@ -1,0 +1,27 @@
+<p>databinding works!</p>
+
+<div>Name is: {{name}}</div>
+<div>Name is: <span [innerHTML]="name"></span></div>
+<div bind-innerHTML="name"></div>
+<hr>
+<img src="https://m.cricbuzz.com/a/img/v1/192x192/i1/c171004/sachin-tendulkar.jpg" alt="" srcset="">&nbsp;
+<img src="{{img_url}}" alt="" />&nbsp;
+<img [src]="img_url" alt="" />&nbsp;
+<img bind-src="img_url" alt="" />&nbsp;
+<hr>
+<input value="sanjay samantra" />&nbsp;
+1 way: <input value="{{name}}" />&nbsp;
+1 way:<input [value]="name" />&nbsp;
+1 way:<input bind-value="name" />&nbsp;
+2 way:<input [(ngModel)]="name" />&nbsp;
+<hr>
+<button class="btn btn-primary" disabled="true">Button-1</button>&nbsp;
+<button class="btn btn-primary" disabled="{{flag}}">Button-1</button>&nbsp;
+<button class="btn btn-primary" [disabled]="flag">Button-1</button>&nbsp;
+<button class="btn btn-primary" bind-disabled="flag">Button-1</button>&nbsp;
+<hr>
+<button class="btn btn-success" (click)="addToCart()">Add To Cart</button>&nbsp;
+<button class="btn btn-success" on-click="addToCart()">Add To Cart</button>&nbsp;
+<hr>
+<h1>I am a Paragraph, Click the below button to toggle me</h1>
+<button>SHOW/HIDE</button>
