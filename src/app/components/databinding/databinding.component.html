@@ -1,4 +1,4 @@
-<p>databinding works!</p>
+<p style="color:darkred">databinding works!</p>
 
 <div>Name is: {{name}}</div>
 <div>Name is: <span [innerHTML]="name"></span></div>
@@ -23,5 +23,21 @@
 <button class="btn btn-success" (click)="addToCart()">Add To Cart</button>&nbsp;
 <button class="btn btn-success" on-click="addToCart()">Add To Cart</button>&nbsp;
 <hr>
-<h1>I am a Paragraph, Click the below button to toggle me</h1>
-<button>SHOW/HIDE</button>
+<h1 [hidden]="flag">I am a Paragraph, Click the below button to toggle me</h1>
+<button (click)="flag=!flag">{{flag?'SHOW':'HIDE'}}</button>
+<hr>
+<input type="{{myType}}" />
+<button (click)="toggleFlag()">{{flag?'Hide Pwd':'Show Pwd'}}</button>
+<hr>
+Number-1: <input type="number" [(ngModel)]="num1" />
+Number-2: <input type="number" [(ngModel)]="num2" />
+<div>Addition is {{num1+num2}}</div>
+<div>Subtraction is {{num1-num2}}</div>
+<hr>
+<textarea cols="30" rows="5" maxlength="100" [(ngModel)]="msg"></textarea>
+<p>Remaining: {{100 - msg.length}}</p>
+<hr>
+<input type="number" #n1 />
+<input type="number" ref-n2 />
+<button class="btn btn-primary" (click)="addition(n1.value,n2.value)">Add</button>
+<div>Addition of {{n1.value}} & {{n2.value}} is {{addResult}}</div>

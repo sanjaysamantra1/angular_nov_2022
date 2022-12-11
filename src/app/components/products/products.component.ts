@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import * as data from '../../../assets/data/products.json';
 
 @Component({
-  selector: 'flipkart-products',
+  selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
+  products = (data as any).default;
 }

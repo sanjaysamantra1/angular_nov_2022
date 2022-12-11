@@ -14,6 +14,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { LoginModule } from 'src/login/login.module';
 import { DatabindingComponent } from './components/databinding/databinding.component';
 import { FormsModule } from '@angular/forms';
+import { DirectiveComponent } from './components/directive/directive.component';
 
 @NgModule({
   // components,pipes,directives
@@ -28,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     OrdinalPipe,
     ProductsComponent,
     DatabindingComponent,
+    DirectiveComponent,
   ],
   // dependent modules
   imports: [BrowserModule, AppRoutingModule, LoginModule, FormsModule],
