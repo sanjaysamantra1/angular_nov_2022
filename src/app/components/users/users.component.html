@@ -1,0 +1,46 @@
+<h1 class="text-center bg-primary text-white">User List</h1>
+
+<button class="btn btn-primary ms-1" (click)="isTable=true">Table</button>
+<button class="btn btn-secondary ms-1" (click)="isTable=false">Grid</button>
+
+<div class="container">
+    <div class="row">
+        <table class="table table-bordered table-striped" *ngIf="isTable;else gridTemplate">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>phone</th>
+                    <th>city</th>
+                    <th>company</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.phone}}</td>
+                    <td>{{user.address.city}}</td>
+                    <td>{{user.company.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <ng-template #gridTemplate>
+            <div class="col-sm-3" *ngFor="let user of users">
+                <div class="card">
+                    <img src="https://www.w3schools.com/howto/img_avatar.png" class="card-img-top"
+                        style="height: 200px;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">{{user.name}}</h5>
+                        <p class="card-text">Email: {{user.email}}</p>
+                        <p class="card-text">Phone: {{user.phone}}</p>
+                        <p class="card-text">City: {{user.address.city}}</p>
+                        <p class="card-text">Company: {{user.company.name}}</p>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

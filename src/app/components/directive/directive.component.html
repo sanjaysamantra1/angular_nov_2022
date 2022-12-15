@@ -1,7 +1,8 @@
-<p>directive works!</p>
+<p [ngStyle]="{'color':n%2 === 0?'blue':'red'}" highlight>directive works!</p>
+
 
 <h2 *ngIf="n%2 === 0">{{n}} is Even </h2>
-<h2 *ngIf="n%2 !== 0">{{n}} is Odd</h2>
+<h2 *ngIf="n%2 !== 0" highlight>{{n}} is Odd</h2>
 <hr>
 <div *ngIf="n%2 === 0;else oddTemplate">
     {{n}} is Even Number
@@ -1119,7 +1120,7 @@
         <option [value]="state.val">{{state.text}}</option>
     </ng-container>
 </select>
-<h1>Selected State is: {{selectedState}}</h1>
+<h1 highlight>Selected State is: {{selectedState}}</h1>
 <hr>
 <h1 [ngSwitch]="dayNumber">Today is:
     <p *ngSwitchCase="1">Monday</p>
@@ -1153,8 +1154,8 @@
             <td>{{i+1}}</td>
             <td>{{emp.eId}}</td>
             <td>{{emp.name}}</td>
-            <td>{{emp.gender}}</td>
-            <td>{{emp.sal}}</td>
+            <td [ngClass]="emp.gender==='male'?'bg-primary':'bg-secondary'">{{emp.gender}}</td>
+            <td [ngStyle]="{'color':emp.sal>7000?'blue':'red'}">{{emp.sal}}</td>
             <td>{{isFirst}}</td>
             <td>{{isLast}}</td>
             <td>{{isEven}}</td>
@@ -1163,3 +1164,10 @@
     </tbody>
 </table>
 <button class="btn btn-primary" (click)="getNewEmployees()">Get New Employees</button>
+<hr>
+<textarea numberonly></textarea>
+<input type="text" numberonly />
+<br>
+<button class="btn btn-primary">Normal</button>
+<button class="btn btn-primary ms-1" backbutton>back</button>
+<button class="btn btn-secondary ms-1" clickcount>click </button>

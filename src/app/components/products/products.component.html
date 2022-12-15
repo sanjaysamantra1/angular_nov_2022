@@ -2,7 +2,19 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-sm-3" *ngFor="let prod of products">
+        <div class="col-sm-4 offset-4">
+            <input [(ngModel)]="searchText" type="search" placeholder="Search product..." class="form-control">
+        </div>
+        <div class="col-sm-4 pull-right">
+            <button class="btn btn-primary" (click)="sortAsc()">Price Asc</button> &nbsp;
+            <button class="btn btn-secondary" (click)="sortDesc()">Price Desc</button>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-sm-3" *ngFor="let prod of products 
+            |  filter : searchText
+            | paginate: { itemsPerPage: 4, currentPage: p } 
+            ">
             <div class="card">
                 <img src="{{prod.image}}" class="card-img-top" style="height: 200px;">
                 <div class="card-body">
@@ -10,9 +22,14 @@
                     <p class="card-text">{{prod.title}}</p>
                     <p class="card-text">Price: {{prod.price}}</p>
                     <p class="card-text">Rating: {{prod.rating.rate}}</p>
-                    <button class="btn btn-primary">ADD TO CART</button>
+                    <button class="btn btn-primary" (click)="addToCart()">ADD TO CART</button>
                     <button class="btn btn-secondary">BUY NOW</button>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 offset-3">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </div>
         </div>
     </div>

@@ -1,12 +1,23 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'ordinal'
+  name: 'ordinal',
 })
 export class OrdinalPipe implements PipeTransform {
+  transform(input: number) {
+    const rem = input % 10;
+    let res = '';
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+    if (rem === 1) {
+      res = input + 'st';
+    } else if (rem === 2) {
+      res = input + 'nd';
+    } else if (rem === 3) {
+      res = input + 'rd';
+    } else {
+      res = input + 'th';
+    }
+
+    return res;
   }
-
 }

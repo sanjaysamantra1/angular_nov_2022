@@ -1,0 +1,47 @@
+<p>pipes-demo works!</p>
+
+<h4>{{name}}</h4>
+<h4>{{name | uppercase}}</h4>
+<h4>{{name | lowercase}}</h4>
+<h4>{{name | titlecase}}</h4>
+
+<h4>{{emp.sal}}</h4>
+<h4>{{emp.sal | currency}}</h4>
+<h4>{{emp.sal | currency:'INR'}}</h4>
+<!-- input  | pipeName : arguement -->
+<h4>{{emp.sal | currency:'&euro;'}}</h4>
+<h4>{{emp.sal | currency:'&#20803;'}}</h4>
+<h4>{{emp.sal | currency:'&yen;'}}</h4>
+<hr>
+<h4>{{today}}</h4>
+<h4>{{today | date | uppercase}}</h4> 
+<h4>{{today | date | lowercase}}</h4>
+<h4>{{today | date : 'fullDate'}}</h4>
+<h4>{{today | date : 'mediumDate'}}</h4>
+<h4>{{today | date : 'shortDate'}}</h4>
+<h4>{{today | date : 'fullTime'}}</h4>
+<h4>{{today | date : 'mediumTime'}}</h4>
+<h4>{{today | date : 'shortTime'}}</h4>
+<h4>{{today | date : 'dd / MMMM / yyyy'}}</h4>
+<hr>
+<h4>{{ 12.111222333 | number: "3.2-5" }}</h4>
+<h4>{{ 2.1 | number: "3.2-5" }}</h4>
+<h4>{{ 0.75 | percent}}</h4>
+<hr>
+<h4>{{emp}}</h4>
+<h4>{{emp | json}}</h4>
+<h4 *ngFor="let entry of emp | keyvalue">
+    {{ entry.key }}---{{ entry.value }}
+</h4>
+<hr>
+<h4>{{arr}}</h4>
+<h4>{{arr | slice : 2 : 4}}</h4>
+<hr>
+<textarea maxlength="100" [(ngModel)]="msg"></textarea>
+<p>Remaining: {{msg | remaining}}</p>
+<p>Message: {{msg}}</p>
+<p>Message: {{msg | truncate : 15:true:'***'}}</p>
+
+<input type="number" [(ngModel)]="cardinal">
+<div>cardinal {{cardinal}}</div>
+<div>ordinal {{cardinal | ordinal}}</div>

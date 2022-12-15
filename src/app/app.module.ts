@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,8 +15,19 @@ import { OrdinalPipe } from './custom-pipes/ordinal.pipe';
 import { ProductsComponent } from './components/products/products.component';
 import { LoginModule } from 'src/login/login.module';
 import { DatabindingComponent } from './components/databinding/databinding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DirectiveComponent } from './components/directive/directive.component';
+import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
+import { UsersComponent } from './components/users/users.component';
+import { GreetComponent } from './components/greet/greet.component';
+import { EmployeeCrudComponent } from './components/employee-crud/employee-crud.component';
+import { NumberonlyDirective } from './custom-directives/numberonly.directive';
+import { HighlightDirective } from './custom-directives/highlight.directive';
+import { BackbuttonDirective } from './custom-directives/backbutton.directive';
+import { ClickcountDirective } from './custom-directives/clickcount.directive';
+import { PipesDemoComponent } from './components/pipes-demo/pipes-demo.component';
+import { RemainingPipe } from './custom-pipes/remaining.pipe';
+import { TruncatePipe } from './custom-pipes/truncate.pipe';
 
 @NgModule({
   // components,pipes,directives
@@ -30,9 +43,28 @@ import { DirectiveComponent } from './components/directive/directive.component';
     ProductsComponent,
     DatabindingComponent,
     DirectiveComponent,
+    DynamicFormComponent,
+    UsersComponent,
+    GreetComponent,
+    EmployeeCrudComponent,
+    NumberonlyDirective,
+    HighlightDirective,
+    BackbuttonDirective,
+    ClickcountDirective,
+    PipesDemoComponent,
+    RemainingPipe,
+    TruncatePipe,
   ],
   // dependent modules
-  imports: [BrowserModule, AppRoutingModule, LoginModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    LoginModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
+  ],
   // Injectables (Services)
   providers: [],
   // which comp to load
