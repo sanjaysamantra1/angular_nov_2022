@@ -17,4 +17,15 @@ export class PipesDemoComponent implements OnInit {
   msg: string = '';
 
   cardinal: number = 21;
+  searchText: string = '';
+
+  employees = [
+    { eId: 101, name: 'deepak', sal: 5000, gender: 'male' },
+    { eId: 103, name: 'anjali', sal: 6000, gender: 'female' },
+    { eId: 102, name: 'ranjan', sal: 8000, gender: 'male' },
+    { eId: 104, name: 'geeta', sal: 7000, gender: 'female' },
+  ];
+
+  numbers1 = [20, 40, 10, 50, 30];
+  numbers2 = [20, 40, 10, 50, 30];
 }

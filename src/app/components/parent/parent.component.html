@@ -1,0 +1,17 @@
+<div class="container border border-primary p-2">
+    <div class="row p-2">
+        <div><b>I am Parent</b>I</div>
+        <div>My own data a is:: {{a}}</div>
+        <input type="number" [(ngModel)]="a" col-sm-3 />
+        <div>My child1's data b is {{child1.b}}</div>
+        <div>My own data parentName is:: {{parentName}}</div>
+    </div>
+    <div class="row mt-2 p-2">
+        <div class="col-sm-6 border border-info">
+            <app-child1 [a]="a" #child1></app-child1>
+        </div>
+        <div class="col-sm-6 border border-info">
+            <app-child2 [aa]="a" [bb]="child1.b" (event1)="receiveData($event)"></app-child2>
+        </div>
+    </div>
+</div>

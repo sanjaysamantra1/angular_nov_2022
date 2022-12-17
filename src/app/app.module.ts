@@ -28,6 +28,11 @@ import { ClickcountDirective } from './custom-directives/clickcount.directive';
 import { PipesDemoComponent } from './components/pipes-demo/pipes-demo.component';
 import { RemainingPipe } from './custom-pipes/remaining.pipe';
 import { TruncatePipe } from './custom-pipes/truncate.pipe';
+import { SearchPipe } from './custom-pipes/search.pipe';
+import { MysortPipe } from './custom-pipes/mysort.pipe';
+import { ParentComponent } from './components/parent/parent.component';
+import { Child1Component } from './components/child1/child1.component';
+import { Child2Component } from './components/child2/child2.component';
 
 @NgModule({
   // components,pipes,directives
@@ -54,6 +59,11 @@ import { TruncatePipe } from './custom-pipes/truncate.pipe';
     PipesDemoComponent,
     RemainingPipe,
     TruncatePipe,
+    SearchPipe,
+    MysortPipe,
+    ParentComponent,
+    Child1Component,
+    Child2Component,
   ],
   // dependent modules
   imports: [

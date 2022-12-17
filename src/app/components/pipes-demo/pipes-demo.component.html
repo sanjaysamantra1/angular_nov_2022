@@ -14,7 +14,7 @@
 <h4>{{emp.sal | currency:'&yen;'}}</h4>
 <hr>
 <h4>{{today}}</h4>
-<h4>{{today | date | uppercase}}</h4> 
+<h4>{{today | date | uppercase}}</h4>
 <h4>{{today | date | lowercase}}</h4>
 <h4>{{today | date : 'fullDate'}}</h4>
 <h4>{{today | date : 'mediumDate'}}</h4>
@@ -45,3 +45,35 @@
 <input type="number" [(ngModel)]="cardinal">
 <div>cardinal {{cardinal}}</div>
 <div>ordinal {{cardinal | ordinal}}</div>
+<hr>
+
+<div class="offset-3 col-sm-6 mb-2">
+    <input [(ngModel)]="searchText" type="search" placeholder="Search..." class="form-control" />
+</div>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Eid</th>
+            <th>Name</th>
+            <th>Sal</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees | search:searchText">
+            <td>{{emp.eId}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.sal}}</td>
+            <td>{{emp.gender}}</td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<b *ngFor="let n of numbers1">
+    {{n}}, &nbsp;
+</b><br>
+<b *ngFor="let n of numbers2 | mysort">
+    {{n}}, &nbsp;
+</b>
+<input type="number" #newNum />
+<button (click)="numbers2.push(+newNum.value)">Add</button>
