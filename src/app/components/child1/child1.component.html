@@ -1,4 +1,8 @@
 <div><b>Child1 Component</b></div>
 <div>My Parent's data a is: {{a}}</div>
+<div>My Parent's arr a is: 
+    <span *ngFor="let ele of arr">{{ele}}, &nbsp;</span>
+</div>
 <input type="number" [(ngModel)]="a">
 <div>My own data b is: {{b}}</div>
+<button (click)="refresh()">refresh</button>
