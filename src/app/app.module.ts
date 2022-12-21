@@ -33,6 +33,10 @@ import { MysortPipe } from './custom-pipes/mysort.pipe';
 import { ParentComponent } from './components/parent/parent.component';
 import { Child1Component } from './components/child1/child1.component';
 import { Child2Component } from './components/child2/child2.component';
+import { Math1Component } from './components/math1/math1.component';
+import { Math2Component } from './components/math2/math2.component';
+import { UserTableComponent } from './components/user-table/user-table.component';
+import { UserCardComponent } from './components/user-card/user-card.component';
 
 @NgModule({
   // components,pipes,directives
@@ -64,6 +68,10 @@ import { Child2Component } from './components/child2/child2.component';
     ParentComponent,
     Child1Component,
     Child2Component,
+    Math1Component,
+    Math2Component,
+    UserTableComponent,
+    UserCardComponent,
   ],
   // dependent modules
   imports: [

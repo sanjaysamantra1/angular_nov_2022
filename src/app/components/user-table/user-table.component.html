@@ -1,0 +1,28 @@
+<p>user-table works!</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>phone</th>
+            <th>city</th>
+            <th>company</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.address.city}}</td>
+            <td>{{user.company.name}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="delete(user.id)">DEL</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

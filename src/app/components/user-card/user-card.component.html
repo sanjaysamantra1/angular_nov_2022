@@ -1,0 +1,19 @@
+<p>user-card works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let user of users">
+            <div class="card">
+                <img src="https://www.w3schools.com/howto/img_avatar.png" class="card-img-top" style="height: 200px;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{user.name}}</h5>
+                    <p class="card-text">Email: {{user.email}}</p>
+                    <p class="card-text">Phone: {{user.phone}}</p>
+                    <p class="card-text">City: {{user.address.city}}</p>
+                    <p class="card-text">Company: {{user.company.name}}</p>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" (click)="refresh()">Refresh</button>
+    </div>
+</div>

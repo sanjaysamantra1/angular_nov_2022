@@ -2,8 +2,11 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  OnChanges,
   OnInit,
   SimpleChange,
+  SimpleChanges,
+  ViewChild,
 } from '@angular/core';
 
 @Component({
@@ -13,11 +16,13 @@ import {
   inputs: ['a', 'arr'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Child1Component implements OnInit {
+export class Child1Component implements OnInit, OnChanges {
   a: any;
   b: number = 20;
   arr: any;
-  refresh(){
+  @ViewChild('myInputBox') inputBox: any;
+
+  refresh() {
     this.changeDetectorRef.markForCheck();
   }
 
@@ -27,7 +32,7 @@ export class Child1Component implements OnInit {
   ngOnInit() {
     console.log('child ngOnInit');
   }
-  ngOnChanges(changes: SimpleChange) {
+  ngOnChanges(changes: SimpleChanges) {
     console.log('child ngOnChanges');
     console.log(changes);
   }
@@ -43,6 +48,8 @@ export class Child1Component implements OnInit {
   }
   ngAfterViewInit() {
     console.log('child ngAfterViewInit');
+    console.log(this.inputBox);
+    this.inputBox.nativeElement.focus();
   }
   ngAfterViewChecked() {
     console.log('child ngAfterViewChecked');
