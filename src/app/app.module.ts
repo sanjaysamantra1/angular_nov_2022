@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,6 +38,10 @@ import { Math1Component } from './components/math1/math1.component';
 import { Math2Component } from './components/math2/math2.component';
 import { UserTableComponent } from './components/user-table/user-table.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
+import { HttpDemo1Component } from './components/http-demo1/http-demo1.component';
+import { CommentsComponent } from './components/comments/comments.component';
+import { EmployeesComponent } from './employees/employees.component';
+import { Myinterceptor1 } from './interceptors/myinterceptor1';
 
 @NgModule({
   // components,pipes,directives
@@ -72,6 +77,9 @@ import { UserCardComponent } from './components/user-card/user-card.component';
     Math2Component,
     UserTableComponent,
     UserCardComponent,
+    HttpDemo1Component,
+    CommentsComponent,
+    EmployeesComponent,
   ],
   // dependent modules
   imports: [
@@ -82,9 +90,12 @@ import { UserCardComponent } from './components/user-card/user-card.component';
     ReactiveFormsModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
+    HttpClientModule,
   ],
   // Injectables (Services)
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: Myinterceptor1, multi: true },
+  ],
   // which comp to load
   bootstrap: [AppComponent],
 })

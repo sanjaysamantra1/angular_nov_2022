@@ -1,0 +1,22 @@
+<p>employees works!</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>Anual Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees">
+            <td>{{emp.id}}</td>
+            <td>{{emp.getFullName()}}</td>
+            <td>{{emp.email}}</td>
+            <td>{{emp.sal}}</td>
+            <td>{{emp.getYearlySalary()}}</td>
+        </tr>
+    </tbody>
+</table>
