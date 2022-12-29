@@ -42,6 +42,12 @@ import { HttpDemo1Component } from './components/http-demo1/http-demo1.component
 import { CommentsComponent } from './components/comments/comments.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { Myinterceptor1 } from './interceptors/myinterceptor1';
+import { ObservableDemo1Component } from './components/observable-demo1/observable-demo1.component';
+import { ObservableDemo2Component } from './components/observable-demo2/observable-demo2.component';
+import { ObservableDemo3Component } from './components/observable-demo3/observable-demo3.component';
+import { SubjectDemo1Component } from './components/subject-demo1/subject-demo1.component';
+import { MessageAddComponent } from './components/message-add/message-add.component';
+import { MessageListComponent } from './components/message-list/message-list.component';
 
 @NgModule({
   // components,pipes,directives
@@ -80,6 +86,12 @@ import { Myinterceptor1 } from './interceptors/myinterceptor1';
     HttpDemo1Component,
     CommentsComponent,
     EmployeesComponent,
+    ObservableDemo1Component,
+    ObservableDemo2Component,
+    ObservableDemo3Component,
+    SubjectDemo1Component,
+    MessageAddComponent,
+    MessageListComponent,
   ],
   // dependent modules
   imports: [

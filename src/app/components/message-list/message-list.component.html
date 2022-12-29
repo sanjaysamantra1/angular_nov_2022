@@ -1,0 +1,23 @@
+<p>message-list works!</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>SL No</th>
+            <th>Message</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngIf="messages.length>0;else noRecord">
+            <tr *ngFor="let msg of messages;let i=index">
+                <td>{{i+1}}</td>
+                <td>{{msg.text}}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>
+<ng-template #noRecord>
+    <tr colspan="2" align="center">
+        No record Found
+    </tr>
+</ng-template>

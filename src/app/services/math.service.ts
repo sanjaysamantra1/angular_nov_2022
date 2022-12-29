@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class MathService {
+  a = 10;
   private constructor() {}
 
   add(a: number, b: number) {
