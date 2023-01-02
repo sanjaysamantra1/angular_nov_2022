@@ -1,0 +1,29 @@
+<form #myForm="ngForm" (submit)="submitMyForm(myForm)">
+    <p>
+        First Name:
+        <input name="firstName" #fname="ngModel" [(ngModel)]='user.fname' required minlength="5" />
+        <span *ngIf="fname.hasError('required') && fname.dirty" class="text-danger">Plz fill firstname</span>
+        <span *ngIf="fname.hasError('minlength') && fname.dirty" class="text-danger">Minimum 5 chars required</span>
+    </p>
+    <p>Last Name: <input name="lastName" ngModel [(ngModel)]='user.lname'></p>
+    <p>Email:
+        <input type="email" name="email" #emailRef="ngModel" [(ngModel)]='user.email' required email />
+        <span *ngIf="emailRef.hasError('required') && emailRef.dirty" class="text-danger">plz fill email</span>
+        <span *ngIf="emailRef.hasError('email') && emailRef.dirty" class="text-danger">email format is not
+            correct</span>
+            <span>
+                {{emailRef.errors  | json}}
+            </span>
+    </p>
+    <fieldset ngModelGroup="address">
+        <p>street: <input name="street" ngModel></p>
+        <p>city: <input name="City" ngModel></p>
+        <p>pin: <input name="pin" ngModel></p>
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Submit</button>
+    <button type="reset" class="btn btn-secondary ms-1">Reset</button>
+</form>
+
+<h3>{{myForm.value | json}}</h3>
+<h3>{{user | json}} </h3>

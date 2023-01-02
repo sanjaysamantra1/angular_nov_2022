@@ -48,6 +48,12 @@ import { ObservableDemo3Component } from './components/observable-demo3/observab
 import { SubjectDemo1Component } from './components/subject-demo1/subject-demo1.component';
 import { MessageAddComponent } from './components/message-add/message-add.component';
 import { MessageListComponent } from './components/message-list/message-list.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { TodoAddComponent } from './components/todo-add/todo-add.component';
+import { FormDemo1Component } from './components/form-demo1/form-demo1.component';
+import { FormDemo2Component } from './components/form-demo2/form-demo2.component';
+import { FormDemo3Component } from './components/form-demo3/form-demo3.component';
+import { FormDemo4Component } from './components/form-demo4/form-demo4.component';
 
 @NgModule({
   // components,pipes,directives
@@ -92,6 +98,12 @@ import { MessageListComponent } from './components/message-list/message-list.com
     SubjectDemo1Component,
     MessageAddComponent,
     MessageListComponent,
+    TodoListComponent,
+    TodoAddComponent,
+    FormDemo1Component,
+    FormDemo2Component,
+    FormDemo3Component,
+    FormDemo4Component,
   ],
   // dependent modules
   imports: [
