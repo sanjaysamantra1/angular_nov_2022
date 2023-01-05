@@ -1,0 +1,17 @@
+<p class="text-center">productdetails works! - {{selectedProdId}}</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 offset-4">
+            <div class="card">
+                <img src="{{prod.image}}" class="card-img-top" style="height: 200px;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{prod.category}}</h5>
+                    <p class="card-text">{{prod.title}}</p>
+                    <p class="card-text">Price: {{prod.price}}</p>
+                    <p class="card-text">Rating: {{prod.rating.rate}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
