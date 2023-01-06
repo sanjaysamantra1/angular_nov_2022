@@ -11,6 +11,8 @@ import { ProductdetailsComponent } from './components/productdetails/productdeta
 import { ProductsComponent } from './components/products/products.component';
 import { ServicesComponent } from './components/services/services.component';
 import { AuthGuard } from './guards/auth.guard';
+import { CareerGuard } from './guards/career.guard';
+import { GroceryGuard } from './guards/grocery.guard';
 import { HasChangesGuard } from './guards/has-changes.guard';
 import { ProductResolverService } from './services/product-resolver.service';
 
@@ -34,6 +36,7 @@ const routes: Routes = [
       { path: 'permanent', component: PermanentjobsComponent },
       { path: 'contract', component: ContractjobsComponent },
     ],
+    canActivateChild:[CareerGuard]
   },
   { path: 'products', component: ProductsComponent },
   {
@@ -42,6 +45,22 @@ const routes: Routes = [
     resolve: { productInfo: ProductResolverService },
   },
   { path: 'productdetail', component: ProductdetailComponent },
+  {
+    path: 'grocery',
+    loadChildren: () =>
+      import('./grocery/grocery.module').then((m) => m.GroceryModule),
+    canLoad: [GroceryGuard],
+  },
+  {
+    path: 'customers',
+    loadChildren: () =>
+      import('./customers/customers.module').then((m) => m.CustomersModule),
+  },
+  {
+    path: 'payment',
+    loadChildren: () =>
+      import('./payment/payment.module').then((m) => m.PaymentModule),
+  },
   { path: '', component: HomeComponent }, // default
   { path: '**', component: NotfoundComponent }, // wrong
 ];
